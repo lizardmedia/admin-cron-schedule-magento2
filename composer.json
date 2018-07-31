@@ -17,7 +17,7 @@
     }
   ],
   "require": {
-    "php": "^7.1.0"
+    "php": "^7.0.0"
   },
   "require-dev": {
     "phpunit/phpunit": ">=7.0.0"
@@ -33,7 +33,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "LizardMedia\\AdminCronSchedule\\": ""
+      "LizardMedia\\CronScheduler\\": ""
     }
   }
 }
