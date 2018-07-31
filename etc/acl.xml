@@ -8,6 +8,9 @@
                     <resource id="Magento_Backend::tools" title="Tools" translate="title" sortOrder="50">
                         <resource id="LizardMedia_CronScheduler::cron" title="Cron Job Management" translate="title"
                                   sortOrder="10"/>
+                        <resource id="LizardMedia_CronScheduler::cron_configuration" title="Cron Job Configuration"
+                                  translate="title"
+                                  sortOrder="10"/>
                     </resource>
                 </resource>
             </resource>

@@ -11,5 +11,14 @@
                 parent="Magento_Backend::system_tools"
                 action="cron/scheduler/index"
                 resource="LizardMedia_CronScheduler::cron"/>
+        <add
+                id="LizardMedia_CronScheduler::cron_configuration"
+                title="Cron Jobs Configuration"
+                translate="title"
+                module="LizardMedia_CronScheduler"
+                sortOrder="20"
+                parent="Magento_Backend::system_tools"
+                action="cron/configuration/index"
+                resource="LizardMedia_CronScheduler::cron_configuration"/>
     </menu>
 </config>
