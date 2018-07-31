@@ -31,9 +31,36 @@
         <bookmark name="bookmarks"/>
         <columnsControls name="columns_controls"/>
         <filters name="listing_filters"/>
+        <massaction name="listing_massaction">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/tree-massactions</item>
+                </item>
+            </argument>
+            <action name="delete">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="confirm" xsi:type="array">
+                            <item name="title" xsi:type="string" translate="true">Delete Items</item>
+                            <item name="message" xsi:type="string" translate="true">Delete items?</item>
+                        </item>
+                        <item name="type" xsi:type="string">delete</item>
+                        <item name="label" xsi:type="string" translate="true">Delete</item>
+                        <item name="url" xsi:type="url" path="cron/manage/massActions_delete" />
+                    </item>
+                </argument>
+            </action>
+        </massaction>
         <paging name="listing_paging"/>
     </listingToolbar>
     <columns name="cron_manage_columns">
+        <selectionsColumn name="ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">schedule_id</item>
+                </item>
+            </argument>
+        </selectionsColumn>
         <column name="schedule_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">

@@ -8,6 +8,29 @@
             <argument name="resourceModel" xsi:type="string">Magento\Cron\Model\ResourceModel\Schedule</argument>
         </arguments>
     </virtualType>
+
+    <!-- Logger virtual type section -->
+
+    <virtualType name="LizardMedia\CronScheduler\Logger\MassActionHandler" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers"  xsi:type="array">
+                <item name="debug" xsi:type="object">LizardMedia\CronScheduler\Logger\Handler\MassActionHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- End of logger virtual type section -->
+
+    <!--Constructor parameter injection section-->
+
+    <type name="LizardMedia\CronScheduler\Model\Manage\MassActions\Delete">
+        <arguments>
+            <argument name="logger" xsi:type="object">LizardMedia\CronScheduler\Logger\MassActionHandler</argument>
+        </arguments>
+    </type>
+
+    <!--End of constructor parameter injection section-->
+
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
