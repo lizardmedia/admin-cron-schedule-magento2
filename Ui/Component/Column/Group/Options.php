@@ -1,4 +1,5 @@
 <?php
+
 namespace LizardMedia\CronScheduler\Ui\Component\Column\Group;
 
 use Magento\Cron\Model\ConfigInterface;
@@ -16,7 +17,7 @@ class Options implements OptionSourceInterface
     protected $options = [];
 
     /**
-     * @var \Magento\Cron\Model\ConfigInterface
+     * @var ConfigInterface
      */
     public $cronConfig;
 
@@ -38,11 +39,13 @@ class Options implements OptionSourceInterface
         if (empty($this->options)) {
             $configCronJobs = $this->cronConfig->getJobs();
             foreach (array_keys($configCronJobs) as $group) {
-                array_push($this->options,
+                array_push(
+                    $this->options,
                     [
                         'label' => $group,
                         'value' => $group
-                    ]);
+                    ]
+                );
             }
         }
         return $this->options;

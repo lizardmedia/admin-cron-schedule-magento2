@@ -9,7 +9,6 @@ use Magento\Cron\Model\ConfigInterface;
  */
 class Configuration
 {
-
     /**
      * @var ConfigInterface
      */

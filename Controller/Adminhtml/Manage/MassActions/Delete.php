@@ -14,6 +14,7 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use LizardMedia\CronScheduler\Model\Manage\MassActions\Delete as MassActionDelete;
 use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\Controller\ResultInterface;
 
 /**
  * Class Delete
@@ -46,7 +47,7 @@ class Delete extends Action
     }
 
     /**
-     * @return ResponseInterface|\Magento\Framework\Controller\ResultInterface|void
+     * @return ResponseInterface|ResultInterface|void
      * @throws Exception
      */
     public function execute()

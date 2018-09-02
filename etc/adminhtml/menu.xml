@@ -1,24 +1,21 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add
-                id="LizardMedia_CronScheduler::cron"
-                title="Cron Jobs"
-                translate="title"
-                module="LizardMedia_CronScheduler"
-                sortOrder="10"
-                parent="Magento_Backend::system_tools"
-                action="cron/scheduler/index"
-                resource="LizardMedia_CronScheduler::cron"/>
-        <add
-                id="LizardMedia_CronScheduler::cron_configuration"
-                title="Cron Jobs Configuration"
-                translate="title"
-                module="LizardMedia_CronScheduler"
-                sortOrder="20"
-                parent="Magento_Backend::system_tools"
-                action="cron/configuration/index"
-                resource="LizardMedia_CronScheduler::cron_configuration"/>
+        <add id="LizardMedia_CronScheduler::cron"
+             title="Cron Jobs"
+             translate="title"
+             module="LizardMedia_CronScheduler"
+             sortOrder="10"
+             parent="Magento_Backend::system_tools"
+             action="cron/scheduler/index"
+             resource="LizardMedia_CronScheduler::cron"/>
+        <add id="LizardMedia_CronScheduler::cron_configuration"
+             title="Cron Jobs Configuration"
+             translate="title"
+             module="LizardMedia_CronScheduler"
+             sortOrder="11"
+             parent="Magento_Backend::system_tools"
+             action="cron/configuration/index"
+             resource="LizardMedia_CronScheduler::cron_configuration"/>
     </menu>
 </config>

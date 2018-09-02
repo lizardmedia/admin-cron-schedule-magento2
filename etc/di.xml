@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!--Virtual type section-->
+
     <virtualType name="Magento\Cron\Model\ResourceModel\Schedule\Virtual\Collection"
                  type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
@@ -8,8 +10,6 @@
             <argument name="resourceModel" xsi:type="string">Magento\Cron\Model\ResourceModel\Schedule</argument>
         </arguments>
     </virtualType>
-
-    <!-- Logger virtual type section -->
 
     <virtualType name="LizardMedia\CronScheduler\Logger\MassActionHandler" type="Magento\Framework\Logger\Monolog">
         <arguments>
@@ -19,7 +19,7 @@
         </arguments>
     </virtualType>
 
-    <!-- End of logger virtual type section -->
+    <!-- End of virtual type section -->
 
     <!--Constructor parameter injection section-->
 
@@ -29,15 +29,14 @@
         </arguments>
     </type>
 
-    <!--End of constructor parameter injection section-->
-
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="cron_scheduler_index_data_source" xsi:type="string">
-                    Magento\Cron\Model\ResourceModel\Schedule\Virtual\Collection
-                </item>
+                <item name="cron_scheduler_index_data_source" xsi:type="string">Magento\Cron\Model\ResourceModel\Schedule\Virtual\Collection</item>
             </argument>
         </arguments>
     </type>
+
+    <!--End of constructor parameter injection section-->
+
 </config>

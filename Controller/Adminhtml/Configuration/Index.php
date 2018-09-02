@@ -1,6 +1,9 @@
 <?php
 namespace LizardMedia\CronScheduler\Controller\Adminhtml\Configuration;
 
+use Magento\Backend\Model\View\Result\Page;
+use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Backend\App\Action\Context;
 use Magento\Backend\App\Action;
@@ -15,19 +18,20 @@ class Index extends Action
      * @const string
      */
     const ADMIN_RESOURCE = "LizardMedia_CronScheduler::cron_configuration";
+    
     /**
      * @const string
      */
     const TITLE = 'Cron Jobs Configuration';
 
     /**
-     * @var \Magento\Framework\View\Result\PageFactory
+     * @var PageFactory
      */
     protected $resultPageFactory;
 
     /**
-     * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
-     * @param \Magento\Backend\App\Action\Context $context
+     * @param PageFactory $resultPageFactory
+     * @param Context $context
      */
     public function __construct(
         PageFactory $resultPageFactory,
@@ -38,11 +42,11 @@ class Index extends Action
     }
 
     /**
-     * @return \Magento\Backend\Model\View\Result\Page|\Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface
+     * @return Page|ResponseInterface|ResultInterface
      */
     public function execute()
     {
-        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
+        /** @var Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu(self::ADMIN_RESOURCE);
         $resultPage->getConfig()->getTitle()->prepend(__(self::TITLE));
